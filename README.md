@@ -15,8 +15,8 @@ pip install flask-dt
 '''python
 from flask_dt import *
 
--- after declaring your Flask app and SQLAlchemy db instances plus any other additional instances
--- assuming your Flask app and SQLAlchemy db instances are named app and db respectively
+-- after declaring your Flask app and SQLAlchemy db instances plus any other additional instances  
+-- assuming your Flask app and SQLAlchemy db instances are named app and db respectively  
 
 dt = FlaskDt(app, db, "templatename.html", "route")
 
@@ -31,5 +31,5 @@ in your virtualenv:
 $ pip install -e .[dev]
 '''
 
-However this specific package requires a basic flask application setup
+However this specific package requires a basic flask application setup  
 The structure for running tests is something to be looked into
