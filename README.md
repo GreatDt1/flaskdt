@@ -20,7 +20,7 @@ from flask_dt import *
 
 dt = FlaskDt(app, db, "templatename.html", "route")
 
-dt.display_table()
+dt.display_table()  
 '''
 
 # Developing Flask-dt
