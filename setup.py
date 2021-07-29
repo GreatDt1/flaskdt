@@ -57,7 +57,14 @@ setup(
 
         "dev":[
             "pytest>=3.7", 
+            "check-manifest>=0.46", 
+            "twine>=3.4.2", 
         ], 
 
     }, 
+
+    # maintainer info
+    url="https://github.com/GreatDt1/flaskdt", 
+    author="Donatus", 
+    author_email="flaskdt@gmail.com", 
 )
