@@ -11,7 +11,7 @@ setup(
     name="flask-dt", # name is what you pip install. In this case: pip install flask-dt
     #                  it doesn't have to be the name of the python code that people will import
 
-    version="0.0.1", # 0.0.x version numbers imply that it is unstable
+    version="0.0.1.1", # 0.0.x version numbers imply that it is unstable
     #             there is a good chance that the first few times you upload the package to pypi
     #             there might be a packaging mistake
 
