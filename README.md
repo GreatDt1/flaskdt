@@ -24,4 +24,4 @@ dt = FlaskDt(app, db, "templatename.html", "route")
 # This will be called when specifying your routes
 dt.display_table()  
 ```
-
+You will find a simple flask application that utilises flask-dt [here](https://github.com/GreatDt1/Flaskdt_App)
