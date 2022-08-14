@@ -16,12 +16,15 @@ pip install flask-dt
 from flask_dt import FlaskDt
 
 # after declaring your Flask app and SQLAlchemy db instances plus any other additional instances  
-# assuming your Flask app and SQLAlchemy db instances are named app and db respectively  
+# assuming your SQLAlchemy db instance is named db
 
-dt = FlaskDt(app, db, "templatename.html", "route")
+dt = FlaskDt(db)
 
 
 # This will be called when specifying your routes
-dt.display_table()  
+@app.route('/tables/<string:tablename>')
+@dt.display_table
+def your_func():
+    pass
 ```
 You will find a simple flask application that utilises flask-dt [here](https://github.com/GreatDt1/Flaskdt_App)
