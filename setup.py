@@ -11,7 +11,7 @@ setup(
     name="flask-dt", # name is what you pip install. In this case: pip install flask-dt
     #                  it doesn't have to be the name of the python code that people will import
 
-    version="0.0.1.1", # 0.0.x version numbers imply that it is unstable
+    version="0.0.1.2", # 0.0.x version numbers imply that it is unstable
     #             there is a good chance that the first few times you upload the package to pypi
     #             there might be a packaging mistake
 
@@ -47,9 +47,9 @@ setup(
 
     # dependencies
     install_requires=[
-        "SQLAlchemy <= 1.3.23", 
-        "Flask <= 2.0.1", 
-        "Flask-SQLAlchemy ~=2.4.4", 
+        "SQLAlchemy ~= 1.4.0", 
+        "Flask ~= 2.0.1", 
+        "Flask-SQLAlchemy ~=2.5.1", 
     ], 
 
     # pytest

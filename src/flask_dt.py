@@ -1,37 +1,34 @@
-from flask import render_template
+from functools import wraps
+
 
 class FlaskDt():
-    def __init__(self, app, db, template, route):
-        self.app = app
+    def __init__(self, db):
         self.db = db
-        self.template = template
-        self.route = route
     
-    @property
-    def display_table(self):
-        def wrapper_1(*args, **kwargs):
 
-            @self.app.route(f'/{self.route}/<string:tablename>', methods=['POST', 'GET'])
-            def table_page(tablename):
-                
-                if tablename == "":
-                    return "No table name has been provided"
+    def display_table(self, func):
 
+        @wraps(func)   
+        def get_table(tablename, *args, **kwargs):
+            """This function queries all data of a given table given the tablename
+
+            :param tablename: String with name of table called tablename.
+            :return: tablename, table_class, columns, records, or none for respective values
+            """
+
+            if tablename != "":
                 table_class = get_class_by_tablename(tablename, self.db)
+                columns=records=None
 
                 if table_class:
                     columns = table_class.__table__.columns.keys()
                     records = self.db.session.query(table_class).all()
-
-                    return render_template(self.template, columns=columns, records=records, tablename=tablename)
-
-                else:
-                    return f'No such table {tablename} in the database. Try creating the table'
-                        
-    
-        return wrapper_1
-
-    # need to define a decorator for the app instance in the FlaskDt instance
+                
+                return func(tablename=tablename,table_class=table_class,columns=columns,records=records, *args,**kwargs)
+            
+            return func(*args, **kwargs)
+            
+        return get_table
     
 
 def get_class_by_tablename(tablename, db):
@@ -40,12 +37,6 @@ def get_class_by_tablename(tablename, db):
     :param tablename: String with name of table.
     :return: Class reference or None.
     """
-    for c in db.Model._decl_class_registry.values():
+    for c in db.Model.registry._class_registry.values():
         if hasattr(c, '__tablename__') and c.__tablename__ == tablename:
             return c
-
-    # This sort of prints the schema
-    # for t in db.metadata.tables.items():
-    #         print(t)
-
-    # print(get_class_by_tablename("products"))

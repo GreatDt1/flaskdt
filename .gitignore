@@ -83,6 +83,9 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Other info
+other_info/
+
 # IPython
 profile_default/
 ipython_config.py
@@ -144,5 +147,8 @@ cython_debug/
 
 # customo folders
 stuff/
+
+# flask example app
+/Flaskdt_App
 
 # End of https://www.toptal.com/developers/gitignore/api/python
