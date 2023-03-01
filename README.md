@@ -28,3 +28,7 @@ def your_func():
     pass
 ```
 You will find a simple flask application that utilises flask-dt [here](https://github.com/GreatDt1/Flaskdt_App)
+
+## Maintainer
+
+[<img src="https://avatars.githubusercontent.com/u/68665787?v=4" width = "80" height = "80"/>](https://github.com/Donatussss/)
