@@ -31,4 +31,4 @@ You will find a simple flask application that utilises flask-dt [here](https://g
 
 ## Maintainer
 
-[<img src="https://avatars.githubusercontent.com/u/68665787?v=4" width = "80" height = "80"/>](https://github.com/Donatussss/)
+[<img src="https://avatars.githubusercontent.com/u/68665787?v=4" width = "75" height = "75"/>](https://github.com/Donatussss/)
